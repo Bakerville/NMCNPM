@@ -38,9 +38,9 @@
 						</div>
 						<div class="col-sm-3">
 							<div class="pricebox">
-								<p>Price: $. <span> {{ book.price }}</span></p>
-								<button class="btn btn-warning" id="addTocart" data-book-id="{{ book.id }}">
-									<i class="fa fa-shopping-cart""></i>Add to cart
+								<p>Đơn giá: <span> {{ book.price }},000đ</span></p>
+								<button class="btn btn-sm btn-info" id="addTocart" data-book-id="{{ book.id }}">
+									<i class="fa fa-shopping-cart"></i>Thêm vào giỏ
 								</button>
 							</div>
 						</div>
@@ -51,7 +51,7 @@
 					{% if messages %}
 						<div class="messages">
 						    {% for message in messages %}
-						    <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+						    <p {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
 						    {% endfor %}
 						</div>
 					{% endif %}	

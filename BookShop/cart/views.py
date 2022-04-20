@@ -19,13 +19,13 @@ def cart_update(request, bookid, quantity):
 	return render(request, 'cart/price.html', {"price":price})
 
 def cart_remove(request, bookid):
-    cart = Cart(request)
-    book = get_object_or_404(Book, id=bookid)
-    cart.remove(book)
-    return redirect('cart:cart_details')
+	cart = Cart(request)
+	book = get_object_or_404(Book, id=bookid)
+	cart.remove(book)
+	return redirect('cart:cart_details')
 
 def total_cart(request):
-	return render(request, 'cart/totalcart.html')
+ 	return render(request, 'cart/totalcart.html')
 
 def cart_summary(request):
 

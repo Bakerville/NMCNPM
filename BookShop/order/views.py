@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.views import View
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
-from cart.cart import Cart
+from  cart.cart import Cart
 from .models import Order, OrderItem
 from .forms import OrderCreateForm
 from .pdfcreator import renderPdf
@@ -32,7 +32,7 @@ def order_create(request):
 				return render(request, 'order/successfull.html', {'order': order})
 
 			else:
-				messages.error(request, "Fill out your information correctly.")
+				messages.error(request, "Điền đầy đủ thông tin")
 
 		if len(cart) > 0:
 			return render(request, 'order/order.html', {"form": form})

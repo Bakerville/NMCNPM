@@ -9,12 +9,12 @@ class Order(models.Model):
 	email = models.EmailField()
 	phone = models.CharField(max_length=16)
 	address = models.CharField(max_length=150)
-	division = models.CharField(max_length=20)
-	district = models.CharField(max_length=30)
-	zip_code = models.CharField(max_length=30)
+	#division = models.CharField(max_length=20)
+	#district = models.CharField(max_length=30)
+	#zip_code = models.CharField(max_length=30)
 	payment_method = models.CharField(max_length = 20)
 	account_no = models.CharField(max_length = 20)
-	transaction_id = models.IntegerField()
+	#transaction_id = models.IntegerField()
 	payable = models.IntegerField()
 	totalbook = models.IntegerField()
 	created = models.DateTimeField(auto_now_add=True)
@@ -32,13 +32,13 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
-    order = models.ForeignKey(Order, on_delete=models.CASCADE)
-    book = models.ForeignKey(Book, on_delete=models.CASCADE)
-    price = models.DecimalField(max_digits=10, decimal_places=2)
-    quantity = models.PositiveIntegerField(default=1)
+	order = models.ForeignKey(Order, on_delete=models.CASCADE)
+	book = models.ForeignKey(Book, on_delete=models.CASCADE)
+	price = models.DecimalField(max_digits=10, decimal_places=2)
+	quantity = models.PositiveIntegerField(default=1)
 
-    def __str__(self):
-        return '{}'.format(self.id)
+	def __str__(self):
+		return '{}'.format(self.id)
 
-    def get_cost(self):
-        return self.price * self.quantity
+	def get_cost(self):
+		return self.price * self.quantity

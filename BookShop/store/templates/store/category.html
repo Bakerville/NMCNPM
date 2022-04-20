@@ -14,9 +14,9 @@
 							{{ item.totalrating|averagerating:item.totalreview }}
 							<span class="totalrating">{{ item.totalreview|add:-1 }}</span>
 						</div>
-						<p> {{ item.price }} $. </p>
-						<button class="btn btn-warning" id="addTocart" data-book-id="{{ item.id }}">
-								<i class="fa fa-shopping-cart""></i>Add to cart
+						<p> {{ item.price }},000đ </p>
+						<button class="btn btn-sm btn-info" id="addTocart" data-book-id="{{ item.id }}">
+								<i class="fa fa-shopping-cart"></i>Thêm vào giỏ
 						</button>
 					</div>
 				</div>
@@ -60,7 +60,7 @@
 			    </ul>
 			</div>
 			{% else %}
-			<h3 class="text-center mt-5">There are no books Found.</h3>
+			<h3 class="text-center mt-5">Không tồn tại sách</h3>
 			{% endif %}	
 
 {% endblock %}

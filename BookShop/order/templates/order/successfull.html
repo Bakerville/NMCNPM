@@ -6,20 +6,18 @@
             <div class="col-md-12 cart_info">
                     <div class="successful-order text-center">
                         <i class="fa fa-check"></i>
-                        <h3 class="page-header">Thank you for you purchase!</h3>
+                        <h3 class="page-header">Cảm on đã mua hàng!</h3>
                     </div>
                     <div class="ordered-info">
-                        <h5>OrderID: <span>#2018{{ order.id }}</span></h5>
-                        <h5>Book: <span>{{ order.totalbook }}</span></h5>
-                        <h5>Name: <span>{{ order.name }}</span></h5>
-                        <h5>Phone: <span>{{ order.phone }}</span></h5>
+                        <h5>ID: <span>#2018{{ order.id }}</span></h5>
+                        <h5>Sách: <span>{{ order.totalbook }}</span></h5>
+                        <h5>Họ và tên: <span>{{ order.name }}</span></h5>
+                        <h5>SĐT: <span>{{ order.phone }}</span></h5>
                         <h5>Email: <span>{{ order.email }}</span></h5>
                         <h5>Account No: <span>{{ order.account_no }}</span></h5>
-                        <h5>Payment Method: <span>{{ order.payment_method }}</span></h5>
-                        <h5>Shipping address: <span>{{ order.division }}:{{ order.zip_code }}, {{ order.district }}, {{ order.address }}</span></h5>
-                    </div>
-                    <div class="download-info">
-                        <a href="{% url 'order:pdf' id=order.id %}"><i class="fa fa-download" aria-hidden="true"></i></a>
+                        <h5>Tổng tiền: <span>{{ order.payable }},000đ</span></h5>
+                        <h5>Phương thức thanh toán: <span>{{ order.payment_method }}</span></h5>
+                        <h5>Địa chỉ giao hàng: <span>{{ order.address }}</span></h5>
                     </div>
             </div>
         </div>

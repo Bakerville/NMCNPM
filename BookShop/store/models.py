@@ -39,7 +39,7 @@ class Book(models.Model):
 	description = models.TextField()
 
 	def __str__(self):
-	    return self.name
+		return self.name
 
 class Review(models.Model):
 	customer = models.ForeignKey(User, on_delete = models.CASCADE)
