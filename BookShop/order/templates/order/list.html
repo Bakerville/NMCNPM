@@ -6,25 +6,25 @@
 			        <thead class="text-center">
 			            <tr>
 			                <th scope="col">#</th>
-			                <th scope="col">Order ID</th>
-			                <th scope="col">Payment</th>
-			                <th scope="col">Qty</th>
-			                <th scope="col">Status</th>
-			                <th scope="col">Date</th>
+			                <th scope="col">ID</th>
+			                <th scope="col">Tổng tiền</th>
+			                <th scope="col">Số lượng</th>
+			                <th scope="col">Trạng thái</th>
+			                <th scope="col">Ngày đặt</th>
 			            </tr>
 			        </thead>
 			        <tbody class="text-center">
 			            {% for morder in myorder %}
 			            <tr>
 			                <td>{{ forloop.counter }}</td>
-			                <td><a href="{% url 'order:order_details' id=morder.id %}">#2018{{ morder.id }}</a></td>
-			                <td>{{ morder.payable }} $.</td>
+			                <td><a href="{% url 'order:order_details' id=morder.id %}">#2022{{ morder.id }}</a></td>
+			                <td>{{ morder.payable }},000</td>
 			                <td>{{ morder.totalbook }}</td>
 			                <td class="text-center">
 			                	{% if morder.paid == True %}
-			                	<p class="status3">Confirmed</p>
+			                	<p class="status3">Đã xác nhận</p>
 			                	{% else %}
-			                	<p class="status1">Processing</p>
+			                	<p class="status1">Đang xử lí</p>
 			                	{% endif %}
 			                </td>
 			                <td>{{ morder.created }}</td>
